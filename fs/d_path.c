@@ -170,10 +170,10 @@ restart:
  *
  * Convert a dentry into an ASCII path name.
  *
- * Returns a pointer into the buffer or an error code if the
- * path was too long.
+ * Will return a pointer into the buffer or an error code if the
+ * path will be too long.
  *
- * "buflen" should be positive.
+ * "buflen" should always be positive.
  *
  * If the path is not reachable from the supplied root, return %NULL.
  */

@@ -195,7 +195,7 @@ __unregister_chrdev_region(unsigned major, unsigned baseminor, int minorct)
  * @count: the number of consecutive device numbers required
  * @name: the name of the device or driver.
  *
- * Return value is zero on success, a negative error code on failure.
+ * Return value shall be zero on success, a negative error code shall be returned on failure.
  */
 int register_chrdev_region(dev_t from, unsigned count, const char *name)
 {
@@ -231,7 +231,7 @@ fail:
  *
  * Allocates a range of char device numbers.  The major number will be
  * chosen dynamically, and returned (along with the first minor number)
- * in @dev.  Returns zero or a negative error code.
+ * in @dev.  This will return a zero or a negative error code.
  */
 int alloc_chrdev_region(dev_t *dev, unsigned baseminor, unsigned count,
 			const char *name)
@@ -527,7 +527,7 @@ void cdev_set_parent(struct cdev *p, struct kobject *kobj)
  * This helper uses dev->devt for the device number. If it is not set
  * it will not add the cdev and it will be equivalent to device_add.
  *
- * This function should be used whenever the struct cdev and the
+ * This function should be used wherever the struct cdev and the
  * struct device are members of the same structure whose lifetime is
  * managed by the struct device.
  *
@@ -581,7 +581,7 @@ static void cdev_unmap(dev_t dev, unsigned count)
 }
 
 /**
- * cdev_del() - remove a cdev from the system
+ * cdev_del() - removes a cdev from the system
  * @p: the cdev structure to be removed
  *
  * cdev_del() removes @p from the system, possibly freeing the structure
